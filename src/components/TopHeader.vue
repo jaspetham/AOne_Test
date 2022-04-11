@@ -8,10 +8,10 @@
 </script>
 
 <template>
-    <div class="top-header flex justify-between">
+    <div class="top-header flex justify-between items-center">
         <h1 class="fs-600 font-bold">{{title}}</h1>
         <div class="user flex gap-x-3 items-center">
-            <span class="fs-400 font-semibold">Jones Ferdinand</span>    
+            <span class="fs-300 font-semibold">Jones Ferdinand</span>    
             <div class="user-img">
                 <img src="/assets/user.png" alt="user">
             </div>

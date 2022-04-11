@@ -14,7 +14,7 @@ import TopHeader from '../components/TopHeader.vue';
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore voluptates illo natus minus laborum quis quae iste recusandae quaerat doloribus a voluptate laboriosam cum aliquid, excepturi consectetur non ab assumenda vitae? Voluptatum ratione officia neque, nostrum possimus maxime unde magni harum repellat pariatur dolorem dolore ducimus ullam porro, aut non!</p>
           </div>
         </div>
-        <div class="mx-auto">
+        <div class="mx-auto img">
           <img src="/assets/about-img.png" alt="about">
         </div>
       </div>
@@ -23,11 +23,37 @@ import TopHeader from '../components/TopHeader.vue';
 </template>
 
 <style scoped>
-.para{
-  --flow-space:2rem;
-  margin-top:2rem;
+  .para{
+    --flow-space:0.5rem;
+    margin-top:0.5rem;
+  }
+  .grid{
+    grid-row-gap: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'image'
+      'body'
+  }
+  .grid-body{
+    grid-area: body;
+  }
+  .img{
+    grid-area: image;
+  }
+
+/* tablet size */
+@media (min-width: 35em) {
+  .para{
+    --flow-space:2rem;
+    margin-top:2rem;
+  }
+  .grid{
+    grid-template-columns: minmax(400px,60%) minmax(500px,40%);
+    grid-template-areas: 
+    'body image';
+  }
 }
-.grid{
-  grid-template-columns: minmax(400px,60%) minmax(500px,40%);
-}
+
+/* laptop size */
+@media (min-width: 45em) {}
 </style>

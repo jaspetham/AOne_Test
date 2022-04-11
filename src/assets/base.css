@@ -11,7 +11,7 @@
   --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
   --fs-800: 3.5rem; /* 56px */
   --fs-700: 2.5rem; /* 40px */
-  --fs-600: 1.5rem; /* 24px */
+  --fs-600: 1.25rem; /* 20px */
   --fs-500: 1rem; /* 16px */
   --fs-400: 0.875rem; /* 14px */
   --fs-300: 0.75rem; /* 12px */
@@ -26,9 +26,10 @@
   :root {
     --fs-800: 5rem; /* 80px */
     --fs-700: 3rem; /* 48px */ 
-    --fs-600: 1.75rem; /* 28px */
+    --fs-600: 1.5rem; /* 24px */
     --fs-500: 1.25rem; /* 20px */
     --fs-400: 1rem; /* 16px */
+    --fs-300: 1rem;
   }
 }
 
@@ -144,8 +145,11 @@ picture {
   height: 100%;
   min-height: 100vh;
   max-height: 100vh;
-  display: grid;
-  grid-template-columns: minmax(100px, 255px) 1fr;
+  display: flex;
+  transition: all .5s ease;
+}
+#main.menuOpen{
+  grid-template-columns: 150px 1fr;
 }
 
 .flow>*:where(:not(:first-child)) {
@@ -153,9 +157,37 @@ picture {
 }
 
 .content{
-  padding:30px;
+  width:85%;
+  padding:1rem;
+}
+
+#menu.menuOpen .content{
+  width: 65%;
 }
 
 .content-body{
-  margin-top:3rem ;
+  margin-top:1rem;
 }
+
+.desktopOnly{
+  display: none;
+}
+
+/* tablet size */
+@media (min-width: 35em) {
+  .content{
+    padding:30px;
+  }
+  .content-body {
+    margin-top: 3rem;
+  }
+  .mobileOnly {
+    display: none;
+  }
+  .desktopOnly {
+    display: block;
+  }
+}
+
+/* laptop size */
+@media (min-width: 45em) {}
