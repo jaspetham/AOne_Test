@@ -1,19 +1,16 @@
-<script>
-    export default{
-        name:'Sidebar',
-        props:{}
-    }
+<script setup>
+    import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
     <section id="sidebar" class="bg-sidebar p-5">
-        <div class="logo-wrap flex items-center gap-x-3">
+        <RouterLink to="/" class="logo-wrap flex items-center gap-x-3">
             <img src="/assets/aone-logo.png" alt="logo">
             <span class="fs-600 font-bold text-white">AOne</span>
-        </div>
+        </RouterLink>
         <ul class="side-menus flow mt-5">
             <li>
-                <a href="" class="text-light-grey flex items-center gap-x-4">
+                <RouterLink to="/about" class="text-light-grey flex items-center gap-x-4">
                     <div class="menu-icon">
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#BDBDBD" stroke-linecap="round" stroke-linejoin="round"/>
@@ -22,10 +19,10 @@
                         </svg>
                     </div>
                     <span class="fs-400">About</span>
-                </a>
+                </RouterLink>
             </li>
             <li>
-                <a href="" class="text-light-grey flex items-center gap-x-4">
+                <RouterLink to="/users" class="text-light-grey flex items-center gap-x-4">
                     <div class="menu-icon">
                         <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.75 15.8492V14.3492C12.75 13.5536 12.4339 12.7905 11.8713 12.2279C11.3087 11.6653 10.5456 11.3492 9.75 11.3492H3.75C2.95435 11.3492 2.19129 11.6653 1.62868 12.2279C1.06607 12.7905 0.75 13.5536 0.75 14.3492V15.8492" stroke="#BDBDBD" stroke-linecap="round" stroke-linejoin="round"/>
@@ -35,7 +32,7 @@
                         </svg>
                     </div>
                     <span class="fs-400">Users</span>
-                </a>
+                </RouterLink>
             </li>
         </ul>
     </section>
