@@ -1,6 +1,10 @@
+<script setup>
+import TopHeader from '../components/TopHeader.vue';
+</script>
+
 <template>
-  <section id="users">
-    <h1>this is users</h1>
+  <section id="users" class="content">
+    <TopHeader title="Users"/>
   </section>
 </template>
 <style scoped>

@@ -105,6 +105,13 @@
   font-size: var(--fs-200);
 }
 
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+  line-height: 1.1;
+}
+
 /* set up body */
 body {
   font-family: var(--ff-regular);
@@ -145,4 +152,10 @@ picture {
   margin-top: var(--flow-space, 1rem);
 }
 
+.content{
+  padding:30px;
+}
 
+.content-body{
+  margin-top:3rem ;
+}
