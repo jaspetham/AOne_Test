@@ -1,5 +1,10 @@
 <script setup>
 import TopHeader from '../components/TopHeader.vue';
+var links = document.querySelectorAll('.menu');
+links.forEach((link => {
+  link.classList.remove('router-link-active')
+}))
+document.getElementById('aboutLink').classList.add('router-link-active');
 </script>
 
 <template>

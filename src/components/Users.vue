@@ -1,7 +1,7 @@
 <script>
     import { ref, onMounted } from "vue";
     export default {
-      name: 'Posts2',
+      name: 'Posts',
       props: {
       },
       setup() {
@@ -11,7 +11,7 @@
 
           function fetchData() {
             loading.value = true;
-            return fetch('https://reqres.in/api/users/', {
+            return fetch('https://reqres.in/api/users?page=1', {
               method: 'get',
               headers: {
               'content-type': 'application/json'
@@ -29,9 +29,7 @@
             })
             .then(json => {
               // set the response data
-              data.value = json;
-              console.log(json.data)
-              console.log(json)
+              data.value = json.data;
             })
             .catch(err => {
               error.value = err;
@@ -57,29 +55,30 @@
             loading,
             error
           };
+      },
+      methods:{
+        select:function(event){
+          var userId = event.currentTarget.id;
+          window.location.href="./users/"+userId;
+        }
       }
     }
 </script>
 <template>
-  <ul v-if="!loading && data && data.length" class="mt-5 px-3">
-    <li v-for="post of data" :key="post.id" class="my-3 border-2 px-5 py-4 border-orange-600">
-      <div class="grid">
-        <h1 class="font-bold">ID :</h1>
-        <p><strong>{{post.id}}</strong></p>
+  <div class="user" v-for="user of data" :key="user.id">
+    <div class="user-info flex items-center">
+      <img :src=user.avatar alt="">
+      <p class="fs-400 font-semibold user-name">{{user.first_name}} {{user.last_name}}</p>
+    </div>
+    <div class="user-detail flex justify-between items-center">
+      <p class="fs-400 font-semibold email">{{user.email}}</p>
+      <div :id="user.id" v-on:click="select($event)" class="view-btn uppercase font-bold">
+        View Detail
       </div>
-      <div class="grid">
-        <h1 class="font-bold">Title :</h1>
-        <p>{{post.title}}</p>
-      </div>
-      <div class="grid">
-        <h1 class="font-bold">Desc :</h1>
-        <p>{{post.body}}</p>
-      </div>
-    </li>
-  </ul>
-
+    </div>
+  </div>
   <p v-if="loading">
-   Still loading..
+    Still loading..
   </p>
   <p v-if="error">
     {{error}}
@@ -87,7 +86,14 @@
 </template>
 
 <style scoped>
-  .grid{
-    grid-template-columns: 50px 1fr;
+  .user{
+    display:grid;
+    grid-template-columns: calc(400px - 32px) 1fr;
+    margin-bottom:1.5rem;
+    column-gap: calc(2rem - 32px);
+    padding-right:18px;
+  }
+  .user-name{
+    margin-left: 1.5rem;
   }
 </style>
