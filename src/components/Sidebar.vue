@@ -164,6 +164,7 @@
     @media (min-width: 35em) {
         #sidebar{
             width:25%;
+            max-width: 300px;
         }
         #sidebar img{
             height: auto;
