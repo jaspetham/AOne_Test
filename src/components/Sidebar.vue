@@ -34,7 +34,7 @@
                 </router-link>
             </li>
             <li>
-                <router-link to="/users" id="usersLink" class="text-light-grey flex items-center menu">
+                <router-link :to="{name : 'users', params: { id: '1'}}" id="usersLink" class="text-light-grey flex items-center menu">
                     <div class="menu-icon">
                         <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.75 15.8492V14.3492C12.75 13.5536 12.4339 12.7905 11.8713 12.2279C11.3087 11.6653 10.5456 11.3492 9.75 11.3492H3.75C2.95435 11.3492 2.19129 11.6653 1.62868 12.2279C1.06607 12.7905 0.75 13.5536 0.75 14.3492V15.8492" stroke="#BDBDBD" stroke-linecap="round" stroke-linejoin="round"/>
@@ -162,6 +162,9 @@
     }
     /* tablet size */
     @media (min-width: 35em) {
+        #sidebar{
+            width:25%;
+        }
         #sidebar img{
             height: auto;
         }

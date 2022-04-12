@@ -39,6 +39,7 @@
 
           onMounted(() => {
             fetchData();
+            document.getElementById('usersLink').classList.add('router-link-active');
           });
 
           return {
@@ -84,7 +85,7 @@
                     </div>
                 </div>
                 
-                <router-link to="/users" class="view-btn uppercase font-bold fs-400">
+                <router-link :to="{ name:'users', params: { id: '1'}}" class="view-btn uppercase font-bold fs-400">
                     Back
                 </router-link>
             </div>

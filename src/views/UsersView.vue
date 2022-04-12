@@ -16,6 +16,9 @@ import Users from '../components/Users.vue';
         <div class="user-lists">
           <Users/>
         </div>
+        <div class="pages">
+
+        </div>
       </div>
     </div>
   </section>
@@ -25,7 +28,7 @@ import Users from '../components/Users.vue';
     border:1px solid var(--clr-grey);
     box-shadow:0px 0px 5px 1px rgba(0,0,0,.4);
     border-radius: 8px;
-    min-height: 80vh;
+    min-height: 60vh;
     max-height: 80vh;
     padding:32px 0;
   }
@@ -52,7 +55,7 @@ import Users from '../components/Users.vue';
       grid-template-columns:400px 1fr;
     }
     .user-lists{
-      max-height: 500px;
+      max-height: 45vh;
     }
   }
 

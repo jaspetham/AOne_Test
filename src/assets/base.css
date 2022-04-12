@@ -145,7 +145,6 @@ picture {
 #main {
   height: 100%;
   min-height: 100vh;
-  max-height: 100vh;
   display: flex;
   transition: all .5s ease;
 }
@@ -187,6 +186,7 @@ picture {
 @media (min-width: 35em) {
   .content{
     padding:30px;
+    width:75%;
   }
   .content-body {
     margin-top: 3rem;
