@@ -157,14 +157,13 @@
     .side-menus{
         margin-top:0.5rem;
     }
-    .menu:hover,.menu.router-link-active{
+    .menu:hover,.menu.router-link-exact-active{
         background:var(--clr-brown);
     }
     /* tablet size */
     @media (min-width: 35em) {
         #sidebar{
-            width:25%;
-            max-width: 300px;
+            width: 300px;
         }
         #sidebar img{
             height: auto;

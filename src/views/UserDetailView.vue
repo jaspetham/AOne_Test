@@ -39,7 +39,7 @@
 
           onMounted(() => {
             fetchData();
-            document.getElementById('usersLink').classList.add('router-link-active');
+            document.getElementById('usersLink').classList.add('router-link-exact-active');
           });
 
           return {

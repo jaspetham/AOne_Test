@@ -161,7 +161,7 @@ picture {
   padding:1rem;
 }
 
-#menu.menuOpen .content{
+#main.menuOpen .content{
   width: 65%;
 }
 
@@ -186,7 +186,7 @@ picture {
 @media (min-width: 35em) {
   .content{
     padding:30px;
-    width:75%;
+    width:calc(100% - 300px);
   }
   .content-body {
     margin-top: 3rem;
