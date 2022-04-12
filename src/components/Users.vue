@@ -72,9 +72,9 @@
     </div>
     <div class="user-detail flex justify-between items-center">
       <p class="fs-400 font-semibold email">{{user.email}}</p>
-      <div :id="user.id" v-on:click="select($event)" class="view-btn uppercase font-bold">
+      <router-link :to="{ name:'userDetail', params: { id: user.id}}" class="view-btn uppercase font-bold">
         View Detail
-      </div>
+      </router-link>
     </div>
   </div>
   <p v-if="loading">
