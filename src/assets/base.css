@@ -180,6 +180,7 @@ picture {
   padding: 13px;
   color: white;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 /* tablet size */

@@ -96,4 +96,17 @@
   .user-name{
     margin-left: 1.5rem;
   }
+  
+  .user-detail{
+    column-gap:2rem;
+  }
+  .user-detail > .email{
+    min-width:20ch;
+  }
+  /* tablet size */
+  @media (min-width: 35em) {
+  }
+
+  /* laptop size */
+  @media (min-width: 45em) {}
 </style>

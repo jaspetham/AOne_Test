@@ -64,7 +64,7 @@
             </p>
             <div v-if="!loading">
                 <div class="user">
-                    <h1 class="fs-600 font-semibold">{{data.first_name}} {{data.last_name}}</h1>
+                    <h1 class="fs-600 font-semibold text-center md:text-left">{{data.first_name}} {{data.last_name}}</h1>
                     <div class="user-detail grid">
                         <img class="user-img" :src="data.avatar" alt="user">
                         <div class="details flow">
@@ -93,10 +93,11 @@
 </template>
 <style scoped>
     .user{
-        width:50%;
+        width:100%;
+        min-width: 250px;
         border:1px solid var(--clr-light-grey);
         border-radius: 8px;
-        padding:40px;
+        padding:1rem;
     }
     .user-img{
         border-radius: 8px;
@@ -104,11 +105,28 @@
     .user-detail{
         margin-top:2rem;
         place-items: center;
-        grid-template-columns: minmax(150px,200px) 1fr;
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
     }
     .view-btn{
         padding:0.5rem 2rem;
-        margin-top:3rem;
+        margin-top:1.5rem;
         display:inline-flex;
     }
+    /* tablet size */
+    @media (min-width: 35em) {
+        .user{
+            width:50%;
+            padding:2.5rem;
+        }
+        .user-detail{
+            grid-template-columns: minmax(150px,200px) 1fr;
+        }
+        .view-btn{
+            margin-top: 3rem;
+        }
+    }
+
+    /* laptop size */
+    @media (min-width: 45em) {}
 </style>
