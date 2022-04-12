@@ -53,7 +53,7 @@ document.getElementById('aboutLink').classList.add('router-link-active');
     margin-top:2rem;
   }
   .grid{
-    grid-template-columns: minmax(300px,60%) minmax(500px,40%);
+    grid-template-columns: minmax(300px,60%) minmax(400px,40%);
     column-gap: 2rem;
     grid-template-areas: 
     'body image';
